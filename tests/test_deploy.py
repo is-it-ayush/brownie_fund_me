@@ -1,14 +1,16 @@
 from brownie import FundMe, accounts, network
-from .helpful_scripts import get_account
 
-def deploy_fund_me():
-    # Getting the account.
+def test_deploy():
+    # Act
     account = get_account()
-    # Deploying Contract with publish_source=True
+    # Arrange
     fund_me = FundMe.deploy({"from":account}, publish_source=True)
     print(f"[Contract] Contract Deployed to {fund_me.address}")
-    
 
-def main():
-    deploy_fund_me()
+
+def get_account():
+    if network.show_active() == "development":
+        return accounts[0]
+    else:
+        return accounts.load("test_account")
 
