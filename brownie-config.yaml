@@ -8,11 +8,14 @@ compiler:
 dotenv: .env
 wallets:
   from_key: ${PRIVATE_KEY}
-live:
-  - name: Ethereum
-    networks:
-      - name: Rinkeby (Infura)
-        chainid: 4
-        id: rinkeby
-        host: https://mainnet.infura.io/v3/$WEB3_INFURA_PROJECT_ID
-        explorer: https://api-rinkeby.etherscan.io/api
+
+networks:
+  rinkeby:
+    chainid: 4
+    eth_usd_price_feed: '0x8A753747A1Fa494EC906cE90E9f37563A8AF630e'
+    verify: True
+    id: rinkeby
+    host: https://mainnet.infura.io/v3/$WEB3_INFURA_PROJECT_ID
+    explorer: https://api-rinkeby.etherscan.io/api
+  development:
+    verify: False
