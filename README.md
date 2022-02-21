@@ -1,4 +1,4 @@
-# [Part-II] Brownie FrameWork Fund Me
+# [Part-II] Brownie Framework Fund Me
 This is the second part of working and understanding the working of Brownie. This is built following the tutorial by Patrick Collins on FreeCodeCamp with a touch of my own programming. I have also explained almost each line of Code in Comments.
 
 # Resources
