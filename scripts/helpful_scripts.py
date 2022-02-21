@@ -5,10 +5,11 @@ from brownie import network,accounts,config, MockV3Aggregator
 DECIMALS=8
 STARTING_VALUE = 200000000000
 LOCAL_BLOCKCHAIN_ENVIRONMENTS=["development","ganache-local"]
+FORKED_LOCAL_ENVIRONEMENTS=["mainnet-fork", "mainnet-fork-dev"]
 
 # This function will return the account depending upon the network.
 def get_account():
-    if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
+    if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS or network.show_active() in FORKED_LOCAL_ENVIRONEMENTS:
         return accounts[0]
     else:
         return accounts.load("test_account")
