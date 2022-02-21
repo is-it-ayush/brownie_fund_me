@@ -19,3 +19,5 @@ networks:
     explorer: https://api-rinkeby.etherscan.io/api
   development:
     verify: False
+  ganache-local:
+    verify: False

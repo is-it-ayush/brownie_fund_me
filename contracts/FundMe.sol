@@ -49,6 +49,14 @@ contract FundMe {
         return ethAmountInUsd;
     }
 
+    function getEntranceFee() public view returns(uint256) {
+        uint256 minimumUSD = 50 * 10 ** 18;
+        uint256 price = getPrice();
+        uint256 precision = 1 * 10 ** 18;
+        return (minimumUSD * precision) / price;
+    }
+
+
     // Modifier: They add prerequisite code to the function. In a way, this is modifying a function.
     // Important to use _; (underscore) represents the rest of the function code.  
     modifier onlyOwner() {

@@ -14,7 +14,7 @@ def deploy_fund_me():
     time.sleep(1)
     
     print(f"[Contract] Contract Deployed to {fund_me.address}")
-    
+    return fund_me
 
 def main():
     deploy_fund_me()
